@@ -9,7 +9,7 @@ $categories= mysqli_query($conn, $query);
       
     <div class="col-xs-12 col-sm-6 col-md-3">
     <div class="widget subscribe no-box" >
-    <h5 class="widget-title" >GAM REVIEW<span></span></h5>
+    <h5 class="widget-title" >VISION BUSINESS DIRECTORY<span></span></h5>
     <p>About the company, it's our Web programming 2 project. </p>
     </div>
     </div>
