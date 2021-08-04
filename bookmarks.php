@@ -1,0 +1,182 @@
+<?php
+session_start();
+include('includes/config.php');
+
+include("includes/classes/Review.php");
+include("includes/classes/Account.php");
+include("includes/classes/Constants.php");
+include("includes/classes/Validation.php");
+include("includes/classes/SystemError.php");
+
+include("includes/handlers/sanitize.php");
+
+include("includes/classes/Business.php");
+include("includes/classes/User.php");
+
+if(isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] == 1){
+	header("Location: admin/dashboard.php");
+}
+
+$page_title = "Bookmarks";
+$user = new User($conn, $_SESSION['id']);
+
+$bookmarks = $user->getBookmarks();
+$bookmarksCount = mysqli_num_rows($bookmarks);
+$account = new Account($conn);
+
+
+?>
+
+<?php require_once "includes/head.php" ?>
+<!-- css files unique to this page -->
+<link rel="stylesheet" href="assets/css/index.css">
+
+</head>
+
+
+<body class="layout-top-nav" style="height: auto;">
+
+
+
+<div class="wrapper bg-white-2">
+
+<?php require_once "includes/navbar.php" ?>
+
+<section class="content pb-5 px-5 ">
+
+<!-- Default box -->
+<div class="card mx-5 pb-5 bg-white-2" style='box-shadow: none;'>
+	<div class="card-body pb-0">
+		
+
+
+		<div class="row mx-5">
+			<div class="col-12 mx-5 pb-2 ">
+				<div class="ml-0 pl-0 mt-4"><h3>Bookmarks</h3></div>
+			</div>
+		
+
+		</div>
+			<!-- show bookmarks -->
+		<div class="row d-flex mx-5 align-items-stretch">
+
+		<?php
+			while($row = mysqli_fetch_assoc($bookmarks)){
+				$business = new Business($conn, $row['business_id']); 
+				
+				$reviewsCount = count($business->getReviews());  
+				?>
+
+			<div class="col-12 d-flex align-items-stretch">
+				<div class="card w-100 mx-5 px-5 "  style='box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;'>
+					<div>
+						<div class='float-left'>
+						<h3 class='pt-2 font-weight-light'>
+						<?php echo $business->getBusinessName(); ?>
+						</h3>
+						</div>
+						<div class='float-right'>
+                            <h3>
+
+                                <?php
+                                    if(isset($_SESSION['id']) && !isset($_SESSION['business_name'])){?>
+									<form method="post" id="bookmarkForm" action="includes/handlers/bookmark.php">
+										<input type="hidden" value="" id="status" name="status">
+										<input type="hidden" id='business_id' name='business_id' value=''>
+										<input type="hidden" name='page' value='bookmark'>
+										<i onclick='submitBookmark(0, <?php echo $row["business_id"]; ?>)' class="fas fa-bookmark" style='color:blue;'></i>                                        
+									
+									</form>
+                                <?php
+                                    }
+                                ?>
+
+                            </h3>
+						</div>
+					</div>
+					<div class="card-body pt-4">
+					<div class="row">
+						<div class="col-7 text-center">
+							<img src="images/businesses/<?php echo $business->getPicture(); ?>" alt="user-avatar" class="img-square img-fluid">
+						</div>
+						<div class="col-5">
+						<h2 class="lead"><b><?php echo $business->getBusinessName(); ?></b></h2>
+                        <div class=" pt-4 pb-2">
+                                <?php
+
+                                   
+                                    $starPercent = $business->calculateRating();
+                                   
+                                ?>
+                            
+                            <div class="star-ratings-sprite float-left"><span style="width:<?php echo $starPercent; ?>%;" class="star-ratings-sprite-rating"></span></div>     
+                            <span class='ml-2'><?php echo $reviewsCount; ?> reviews</span>                                          
+                        </div>
+
+						<p class="text-muted"><b>Category: </b><?php echo $business->getBusinessCategory(); ?> </p>
+						<ul class="ml-4 mb-0 fa-ul text-muted">
+							<li class=""><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address:  <?php echo $business->getLocation(); ?></li>
+							<li class=""><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #:  <?php echo $business->getContact(); ?></li>
+						</ul>
+						</div>
+
+					</div>
+					</div>
+					<div class="card-footer">
+						<div class="text-right">
+						<a href="business.php?business_id=<?php echo $row['business_id'] ?>" class="btn btn-sm">
+							See more
+						</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<?php
+			}
+
+			if($bookmarksCount == 0)
+			{
+			?>
+
+				<div class="col-12 p-5 text-center m-4 border-top" style='height:50vh;' >
+					
+					<i>You have no bookmarks</i>
+
+				</div>
+			<?php
+			}
+
+		?>
+		</div>
+	</div>
+<!-- /.card-body -->
+
+</div>
+<!-- /.card -->
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<?php require_once "includes/footer.php" ?>   
+
+</div>
+
+
+
+<?php require_once "includes/footer_scripts.php" ?>
+
+
+<!-- password verfication with javascript check later -->
+</body>
+</html>
+

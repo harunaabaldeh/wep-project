@@ -1,0 +1,321 @@
+
+a{
+    color: #d1d7e0;
+}
+
+a:hover{
+    color: #802bb1;
+}
+
+
+.base1{
+    background:   #802bb1;
+    color: white;
+}
+
+.base1:hover{
+    background:#2d283e !important;
+    color: whitesmoke;
+
+}
+
+.base2{
+    background:  white;
+    color:  #802bb1;
+}
+
+.base2:hover{
+    background:whitesmoke !important;
+    color: #2d283e;
+
+}
+.base3{
+  background:   #2d283e !important;
+  color: white;
+}
+
+.base3:hover{
+  background: #564f6f!important;
+  color: whitesmoke;
+
+}
+.alert-danger-1 {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+
+.bg-dark-2, .bg-dark-2 > a {
+    color: #fff!important;
+}
+.bg-dark-2 {
+    background-color:   #0a0a0a !important;
+}
+
+.bg-dark-3, .bg-dark-3 > a {
+    color: #fff!important;
+}
+.bg-dark-3 {
+    background-color:   #2d283e !important;
+}
+
+.bg-dark-4, .bg-dark-4 > a {
+  color: #fff!important;
+}
+.bg-dark-4 {
+  background-color:   #1b1920 !important;
+}
+
+.bg-white-2, .bg-white-2> a {
+  color: #1b1920 !important;
+}
+.bg-white-2 {
+  background-color:   rgb(254,255,250)!important;
+}
+
+
+.bg-secondary-2, .bg-secondary-2 > a {
+  color:  #4c495d !important;
+}
+.bg-secondary-2 {
+  background-color:   #cac3dd !important;
+}
+
+.checked {
+    color: rgb(231,113,34);
+    }
+
+
+.login-page{
+
+    background:none !important;
+    background-image: linear-gradient(rgba(17, 6, 26, 0.795),rgba(0,0,0,.45))  !important;
+}
+
+.login-page a{
+    color: #d1d7e0;
+}
+
+.navbar-dark{
+    background-image: linear-gradient(rgb(20, 9, 29),rgb(12, 2, 15))  !important;
+}
+
+
+.card-comments .comment-text{
+    color: #d1d7e0 !important;
+   
+}
+
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active{
+  background-color:#4c495d;
+}
+
+.card-comments .comment-text {
+  color: #12101a !important;
+}
+
+.star-ratings-sprite {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+  font-size: 0;
+  height: 21px;
+  line-height: 0;
+  overflow: hidden;
+  text-indent: -999em;
+  width: 110px;
+  margin: 0 auto;
+
+}
+
+  
+.star-ratings-sprite-rating {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+  background-position: 0 100%;
+  float: left;
+  height: 21px;
+  display:block;
+}
+
+
+
+
+
+
+
+
+
+
+
+    /* use display:inline-flex to prevent whitespace issues. alternatively, you can put all the children of .rating-group on a single line */
+    .rating-group {
+      display: inline-flex;
+    }
+    
+    /* make hover effect work properly in IE */
+    .rating__icon {
+      pointer-events: none;
+    }
+    
+    /* hide radio inputs */
+    .rating__input {
+     position: absolute !important;
+     left: -9999px !important;
+    }
+    
+    /* hide 'none' input from screenreaders */
+    .rating__input--none {
+      display: none
+    }
+  
+    /* set icon padding and size */
+    .rating__label {
+      cursor: pointer;
+      padding: 0 0.1em;
+      font-size: 2rem;
+    }
+    
+    /* set default star color */
+    .rating__icon--star {
+      color: rgb(231,113,34);
+    }
+  
+    /* if any input is checked, make its following siblings grey */
+    .rating__input:checked ~ .rating__label .rating__icon--star {
+      color: #ddd;
+    }
+    
+    /* make all stars orange on rating group hover */
+    .rating-group:hover .rating__label .rating__icon--star {
+      color: rgb(231,113,34);
+    }
+  
+    /* make hovered input's following siblings grey on hover */
+    .rating__input:hover ~ .rating__label .rating__icon--star {
+      color: #ddd;
+    }
+
+  
+
+    /* image upload */
+  
+
+    .image-container{
+        height: 350px;
+        width: 430px;
+        position: relative;
+      }
+      .image-container .image-wrapper{
+        position: relative;
+        height: 300px;
+        width: 100%;
+        border-radius: 10px;
+        background: #fff;
+        border: 2px dashed #c2cdda;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .image-wrapper.active{
+        border: none;
+      }
+      .image-wrapper .image{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .image-wrapper img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      .image-wrapper .icon{
+        font-size: 100px;
+        color: #9658fe;
+      }
+      .image-wrapper .text{
+        font-size: 20px;
+        font-weight: 500;
+        color: #5B5B7B;
+      }
+      .image-wrapper #cancel-btn i{
+        position: absolute;
+        font-size: 20px;
+        right: 15px;
+        top: 15px;
+        color: #9658fe;
+        cursor: pointer;
+        display: none;
+      }
+      .image-wrapper.active:hover #cancel-btn i{
+        display: block;
+      }
+      .image-wrapper #cancel-btn i:hover{
+        color: #e74c3c;
+      }
+      .image-wrapper .file-name{
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        padding: 8px 0;
+        font-size: 18px;
+        color: #fff;
+        display: none;
+        background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
+      }
+      .image-wrapper.active:hover .file-name{
+        display: block;
+      }
+      .image-container #custom-btn{
+        margin-top: 30px;
+        display: block;
+        width: 100%;
+        height: 50px;
+        border: none;
+        outline: none;
+        border-radius: 25px;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        cursor: pointer;
+        background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
+      }
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.constants{
+    color: #802bb1;
+    color: #2d283e;
+    color: #564f6f;
+    color: #4c495d;
+    color: #d1d7e0;
+
+    color: #12101a;
+
+    color: #56283e;
+
+    background:  rgba(13, 13, 13, 0);
+}
+
