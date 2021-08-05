@@ -13,7 +13,7 @@ $categoriesCount = mysqli_num_rows($categories);
     <!-- Brand Logo -->
     <a href="dashboard.php" class="brand-link">
       
-      <span class="brand-text font-weight-bold">GamReview</span>
+      <span class="brand-text font-weight-bold">Vision Business Directory</span>
     </a>
 
     <!-- Sidebar -->

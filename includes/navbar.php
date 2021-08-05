@@ -12,7 +12,7 @@ else{
     <nav class="main-header navbar navbar-expand-md <?php echo $navbarColor; ?>  ">
         <div class="container">
             <a href="index.php" class="navbar-brand">
-            <span class="brand-text font-weight-light">GamReview</span>
+            <span class="brand-text font-weight-light">Vision Business Directory</span>
             </a>
     
             <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">

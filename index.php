@@ -11,7 +11,7 @@ if(isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] == 1){
 	header("Location: admin/dashboard.php");
 }
 
-$page_title = "VISION BUSINESS DIRECTORY";
+$page_title = "Vision Business Directory";
 
 
 // Queries
@@ -58,7 +58,7 @@ $top_rated_ids = Business::getTopRated($conn);
                         <div class="container">
                             <a href="index.php" class="navbar-brand">
                             <!-- <img alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
-                            <span class="brand-text font-weight-light">VISION BUSINESS DIRECTORY</span>
+                            <span class="brand-text font-weight-light">Vision Business Directory</span>
                             </a>
                     
                             <div class="collapse navbar-collapse order-3" id="navbarCollapse">
