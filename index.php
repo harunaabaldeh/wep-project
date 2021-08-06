@@ -118,12 +118,13 @@ $top_rated_ids = Business::getTopRated($conn);
                     </nav>
                     <!-- /.navbar -->
                     <div class="container-fluid mt-5 pt-5">
-                        <h2 class="text-center display-4 text-white mt-5">Search for a business</h2>
+                        <h2 class="text-center display-4 text-white mt-5">What are you looking for</h2>
                         <div class="row">
                             <div class="col-md-8 offset-md-2">
                                 <form action="search_results.php">
                                     <div class="input-group">
-                                        <input type="search" class="form-control form-control-lg" name="searchText" placeholder="Type your keywords here">
+                                        <input type="search" class="form-control form-control-lg" name="searchText" placeholder="What">|
+                                        <input type="search" class="form-control form-control-lg" name="searchText" placeholder="Where">|
                                         <div class="input-group-append">
                                             <button type="submit" class="btn btn-lg btn-default base1">
                                                 <i class="fa fa-search"></i>
