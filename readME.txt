@@ -1,4 +1,4 @@
-# This is school web project 
+# Group One
 # Haruna A Baldeh
 # Ebrima Jarjue
 # Abdoukarim Badjie
