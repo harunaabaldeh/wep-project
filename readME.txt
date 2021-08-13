@@ -1,4 +1,4 @@
 # Group One
 # Haruna A Baldeh
-# Ebrima Jarjue
+# Ebrima Jarju
 # Abdoukarim Badjie
